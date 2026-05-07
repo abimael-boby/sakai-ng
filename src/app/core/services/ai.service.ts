@@ -1,0 +1,11 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AiService {
+
+  constructor() { }
+
+  // Add AI-related methods here
+}

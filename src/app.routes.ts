@@ -4,10 +4,16 @@ import { Dashboard } from './app/pages/dashboard/dashboard';
 import { Documentation } from './app/pages/documentation/documentation';
 import { Landing } from './app/pages/landing/landing';
 import { Notfound } from './app/pages/notfound/notfound';
+import { HomeComponent } from './app/features/home/home.component';
+import { GeneratorComponent } from './app/features/generator/generator.component';
+import { ProductComponent } from './app/features/product/product.component';
+import { CheckoutComponent } from './app/features/checkout/checkout.component';
+import { OrdersComponent } from './app/features/orders/orders.component';
 
 export const appRoutes: Routes = [
+      { path: '', component: HomeComponent },
     {
-        path: '',
+        path: 'admin',
         component: AppLayout,
         children: [
             { path: '', component: Dashboard },
@@ -16,8 +22,13 @@ export const appRoutes: Routes = [
             { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') }
         ]
     },
+
     { path: 'landing', component: Landing },
     { path: 'notfound', component: Notfound },
     { path: 'auth', loadChildren: () => import('./app/pages/auth/auth.routes') },
-    { path: '**', redirectTo: '/notfound' }
+    { path: '**', redirectTo: '/notfound' },
+    { path: 'generator', component: GeneratorComponent },
+    { path: 'product', component: ProductComponent },
+    { path: 'checkout', component: CheckoutComponent },
+    { path: 'orders', component: OrdersComponent }
 ];

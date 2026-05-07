@@ -16,7 +16,7 @@ import { AppMenuitem } from './app.menuitem';
                 <li class="menu-separator"></li>
             }
         }
-    </ul> `,
+    </ul> `
 })
 export class AppMenu {
     model: MenuItem[] = [];
@@ -25,17 +25,17 @@ export class AppMenu {
         this.model = [
             {
                 label: 'Home',
-                items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+                items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/admin'] }]
             },
             {
                 label: 'UI Components',
                 items: [
-                    { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
-                    { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
-                    { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/uikit/button'] },
-                    { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'] },
-                    { label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list'] },
-                    { label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree'] },
+                    { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/admin/uikit/formlayout'] },
+                    { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/admin/uikit/input'] },
+                    { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/admin/uikit/button'] },
+                    { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/admin/uikit/table'] },
+                    { label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/admin/uikit/list'] },
+                    { label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/admin/uikit/tree'] },
                     { label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel'] },
                     { label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay'] },
                     { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['/uikit/media'] },
@@ -48,51 +48,52 @@ export class AppMenu {
                 ]
             },
             {
+                label: 'Auth',
+                icon: 'pi pi-fw pi-user',
+                path: '/auth',
+                items: [
+                    {
+                        label: 'Login',
+                        icon: 'pi pi-fw pi-sign-in',
+                        routerLink: ['/auth/login']
+                    },
+                    {
+                        label: 'Error',
+                        icon: 'pi pi-fw pi-times-circle',
+                        routerLink: ['/auth/error']
+                    },
+                    {
+                        label: 'Access Denied',
+                        icon: 'pi pi-fw pi-lock',
+                        routerLink: ['/auth/access']
+                    }
+                ]
+            },
+            {
                 label: 'Pages',
                 icon: 'pi pi-fw pi-briefcase',
-                path: '/pages',
+                path: '/admin/pages',
                 items: [
                     {
                         label: 'Landing',
                         icon: 'pi pi-fw pi-globe',
                         routerLink: ['/landing']
                     },
-                    {
-                        label: 'Auth',
-                        icon: 'pi pi-fw pi-user',
-                        path: '/auth',
-                        items: [
-                            {
-                                label: 'Login',
-                                icon: 'pi pi-fw pi-sign-in',
-                                routerLink: ['/auth/login']
-                            },
-                            {
-                                label: 'Error',
-                                icon: 'pi pi-fw pi-times-circle',
-                                routerLink: ['/auth/error']
-                            },
-                            {
-                                label: 'Access Denied',
-                                icon: 'pi pi-fw pi-lock',
-                                routerLink: ['/auth/access']
-                            }
-                        ]
-                    },
+
                     {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
-                        routerLink: ['/pages/crud']
+                        routerLink: ['/admin/pages/crud']
                     },
                     {
                         label: 'Not Found',
                         icon: 'pi pi-fw pi-exclamation-circle',
-                        routerLink: ['/pages/notfound']
+                        routerLink: ['/admin/pages/notfound']
                     },
                     {
                         label: 'Empty',
                         icon: 'pi pi-fw pi-circle-off',
-                        routerLink: ['/pages/empty']
+                        routerLink: ['/admin/pages/empty']
                     }
                 ]
             },
@@ -103,12 +104,12 @@ export class AppMenu {
                     {
                         label: 'Submenu 1',
                         icon: 'pi pi-fw pi-bookmark',
-                        path: '/hierarchy/submenu_1',
+                        path: '/admin/hierarchy/submenu_1',
                         items: [
                             {
                                 label: 'Submenu 1.1',
                                 icon: 'pi pi-fw pi-bookmark',
-                                path: '/hierarchy/submenu_1/submenu_1_1',
+                                path: '/admin/hierarchy/submenu_1/submenu_1_1',
                                 items: [
                                     { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
                                     { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
@@ -118,7 +119,7 @@ export class AppMenu {
                             {
                                 label: 'Submenu 1.2',
                                 icon: 'pi pi-fw pi-bookmark',
-                                path: '/hierarchy/submenu_1/submenu_1_2',
+                                path: '/admin/hierarchy/submenu_1/submenu_1_2',
                                 items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
                             }
                         ]
@@ -126,12 +127,12 @@ export class AppMenu {
                     {
                         label: 'Submenu 2',
                         icon: 'pi pi-fw pi-bookmark',
-                        path: '/hierarchy/submenu_2',
+                        path: '/admin/hierarchy/submenu_2',
                         items: [
                             {
                                 label: 'Submenu 2.1',
                                 icon: 'pi pi-fw pi-bookmark',
-                                path: '/hierarchy/submenu_2/submenu_2_1',
+                                path: '/admin/hierarchy/submenu_2/submenu_2_1',
                                 items: [
                                     { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
                                     { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
@@ -140,7 +141,7 @@ export class AppMenu {
                             {
                                 label: 'Submenu 2.2',
                                 icon: 'pi pi-fw pi-bookmark',
-                                path: '/hierarchy/submenu_2/submenu_2_2',
+                                path: '/admin/hierarchy/submenu_2/submenu_2_2',
                                 items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
                             }
                         ]
@@ -153,7 +154,7 @@ export class AppMenu {
                     {
                         label: 'Documentation',
                         icon: 'pi pi-fw pi-book',
-                        routerLink: ['/documentation']
+                        routerLink: ['/admin/documentation']
                     },
                     {
                         label: 'View Source',
